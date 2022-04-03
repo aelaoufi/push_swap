@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:31:45 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/02 15:59:45 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/03 23:29:04 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,39 @@ void    swap(t_list *stack)
 	stack->next->content = temp;
 }
 
-void	rotate(t_list *stack)
+void	rotate(t_list **stack)
 {
 	t_list  *head;
-	int temp;
+	int		temp;
 	
 	if(!stack)
 		return ;
-	head = stack;
-	while(stack != NULL)
+	head = (*stack);
+	temp = head->content;
+	while(head->next != NULL)
 	{
-		printf("%d\n", stack->content);
-		stack = stack->next;
+		head->content = head->next->content;
+		head = head->next;
 	}
+	head->content = temp;
+}
+
+void	shift(t_list **stack)
+{
+	t_list	*head;
+	int		temp;
 	
+	if(!stack)
+		return ;
+	head = (*stack);
+	temp = head->content;
+	while(head->next->next != NULL)
+	{
+		head->content = head->next->content;
+		head = head->next;
+	}
+	head->content = temp;
+	temp = head->next->content;
+	head->next = NULL;
+	ft_lstadd_front(stack, ft_lstnew(temp));
 }
