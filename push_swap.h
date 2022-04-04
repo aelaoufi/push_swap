@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/03 22:55:42 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/04 00:01:02 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_list
 
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
+int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_atoi(char *str);
