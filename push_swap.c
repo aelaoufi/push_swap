@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/05 20:02:27 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:20:52 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main (int ac, char **av)
 {
 	t_list  *lst;
-	t_list	*lst2;
     t_list  *head;
 	int	i;
 
@@ -29,29 +28,21 @@ int main (int ac, char **av)
         ft_lstadd_back(&lst, ft_lstnew(ft_atoi(av[i + 1])));
         i++;
     }
-	i = 0;
-	while (i < ac - 1)
-    {
-        ft_lstadd_back(&lst2, ft_lstnew(ft_atoi(av[i + 1])));
-        i++;
-    }
 	while(head != NULL)
 	{
 		printf("%d\n", head->content);
 		head = head->next;
 	}
-	push(&lst, &lst2);
+	// if (ac == 4)
+	// {
+	// 	sort_three(lst);
+	// }
+	reverse_rotate(&lst);
 	printf("-----------------------------------\n");
 	while(lst != NULL)
 	{
 		printf("%d\n", lst->content);
 		lst = lst->next;
-	}
-	printf("-----------------------------------\n");
-	while(lst2 != NULL)
-	{
-		printf("%d\n", lst2->content);
-		lst2 = lst2->next;
 	}
 	// system("leaks push_swap");
 	// exit(0);

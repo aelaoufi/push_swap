@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/05 19:57:56 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:14:46 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_atoi(char *str);
 void    swap(t_list *stack);
 void	rotate(t_list **stack);
-void	shift(t_list **stack);
+void	reverse_rotate(t_list **stack);
 void	push(t_list	* *stack_1, t_list **stack_2);
+void    sort_three(t_list *lst);
+int		compare(t_list *lst);
 
 #endif

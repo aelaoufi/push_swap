@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = push_swap.c helpers.c lists.c permutations.c
+SRCS = push_swap.c helpers.c lists.c permutations.c sort.c
 
 FLAG = -Werror -Wextra -Wall
 

@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:31:45 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/05 20:00:34 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:40:21 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,18 @@ void	rotate(t_list **stack)
 	free(head);
 }
 
-void	shift(t_list **stack)
+void	reverse_rotate(t_list **stack)
 {
 	t_list	*head;
-	int		temp;
 	
 	if(!stack || ft_lstsize(*stack) == 1)
 		return ;
 	head = (*stack);
-	temp = head->content;
 	while(head->next->next != NULL)
 	{
-		head->content = head->next->content;
 		head = head->next;
 	}
-	head->content = temp;
-	temp = head->next->content;
-	head->next = NULL;
-	ft_lstadd_front(stack, ft_lstnew(temp));
-	free(head);
+	ft_lstadd_front(stack, head);
 }
 
 void	push(t_list	**stack_1, t_list **stack_2)

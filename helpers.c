@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:43:59 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/03/29 18:27:05 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:15:17 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,29 @@ int	ft_atoi(char *str)
 	if (res > (unsigned long long)9223372036854775807 + 1 && sign == -1)
 		return (0);
 	return (res * sign);
+}
+
+int	 compare(t_list *lst)
+{
+	if (lst->content > lst->next->content
+		&& lst->next->content > lst->next->next->content
+		&& lst->content > lst->next->next->content)
+		return (1);
+	if (lst->content < lst->next->content
+		&& lst->content < lst->next->next->content
+		&& lst->next->content > lst->next->next->content)
+		return (2);
+	if (lst->content > lst->next->content
+		&& lst->next->content < lst->next->next->content
+		&&lst->content > lst->next->next->content)
+		return (3);
+	if (lst->content < lst->next->content
+		&&lst->next->content > lst->next->next->content
+		&& lst->content > lst->next->next->content)
+		return (4);
+	if (lst->content > lst->next->content
+		&& lst->next->content < lst->next->next->content
+		&& lst->content < lst->next->next->content)
+		return (5);
+	return (0);
 }
