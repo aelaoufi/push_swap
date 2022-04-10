@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:31:45 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/08 22:40:21 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:54:36 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,13 @@ void	reverse_rotate(t_list **stack)
 	{
 		head = head->next;
 	}
-	ft_lstadd_front(stack, head);
+	ft_lstadd_front(stack, head->next);
+	head->next = 0;
 }
 
 void	push(t_list	**stack_1, t_list **stack_2)
 {
 	t_list	*head;
-	t_list *head2;
-	int		temp;
 
 	if(!stack_1)
 		return ;
@@ -72,5 +71,6 @@ void	push(t_list	**stack_1, t_list **stack_2)
 		(*stack_2)->next = 0;
 		return ;
 	}
-	ft_lstadd_front(stack_2, head);
+	else
+		ft_lstadd_front(stack_2, head);
 }

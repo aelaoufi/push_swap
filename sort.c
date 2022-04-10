@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:53:50 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/08 22:14:33 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/10 21:07:25 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,11 @@ void	sort_three(t_list *lst)
 		reverse_rotate(&lst);
 	if (var == 5)
 		swap(lst);
+}
+
+void	sort_five(t_list **lst, t_list **lst2)
+{
+	push(lst, lst2);
+	push(lst, lst2);
+	//push(&lst, &stack2);
 }
