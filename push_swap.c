@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/10 21:06:11 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/11 20:21:35 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main (int ac, char **av)
 		head = head->next;
 	}
 	printf("-----------------------------------\n");
-	sort_five(&lst, &lst2);
+	reverse_rotate(&lst);
 	while(lst != NULL)
 	{
 		printf("%d\n", lst->content);

@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:53:50 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/10 21:07:25 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/11 20:11:55 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	sort_five(t_list **lst, t_list **lst2)
 {
 	push(lst, lst2);
 	push(lst, lst2);
+	sort_three(*lst);
 	//push(&lst, &stack2);
 }
