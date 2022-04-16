@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:43:59 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/08 22:15:17 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/16 21:22:39 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_atoi(char *str)
 	return (res * sign);
 }
 
-int	 compare(t_list *lst)
+int	comp_three(t_list *lst)
 {
 	if (lst->content > lst->next->content
 		&& lst->next->content > lst->next->next->content
@@ -63,5 +63,26 @@ int	 compare(t_list *lst)
 		&& lst->next->content < lst->next->next->content
 		&& lst->content < lst->next->next->content)
 		return (5);
+	return (0);
+}
+
+int	comp_four(char **av, int ac)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 2;
+	while (i <= ac - 1)
+	{
+		if (i == ac - 1)
+			return (i);
+		while (j <= ac - 1 && ft_atoi(av[i]) < ft_atoi(av[j]))
+			j++;
+		if (j > ac - 1)
+			return (i);
+		i++;
+		j = i + 1;
+	}
 	return (0);
 }

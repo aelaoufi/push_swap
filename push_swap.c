@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/11 20:21:35 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/16 21:14:29 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main (int ac, char **av)
     t_list  *head;
 	t_list	*lst2;
 	int	i;
-
+	
 	i = 1;
 	if (ac == 1)
 		return(0);
@@ -35,7 +35,7 @@ int main (int ac, char **av)
 		head = head->next;
 	}
 	printf("-----------------------------------\n");
-	reverse_rotate(&lst);
+	sort_four(&lst, &lst2, av, ac);
 	while(lst != NULL)
 	{
 		printf("%d\n", lst->content);
@@ -47,5 +47,6 @@ int main (int ac, char **av)
 		printf("%d\n", lst2->content);
 		lst2 = lst2->next;
 	}
+	//leaks are in permutations
 	return (0);
 }
