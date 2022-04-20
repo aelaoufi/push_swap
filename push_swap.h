@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/16 21:20:38 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/20 21:36:52 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ void	reverse_rotate(t_list **stack);
 void	push(t_list	**stack_1, t_list **stack_2);
 void	sort_three(t_list **lst);
 int		comp_three(t_list *lst);
-void	sort_four(t_list **lst, t_list **lst2, char **av, int ac);
-int		comp_four(char **av, int ac);
+void	sort_four(t_list **lst, t_list **lst2);
+int		small(char **av, int ac);
+void	sort_five(t_list **lst, t_list **lst2);
+int		small_sec(t_list *lst, int ac);
+int		smallest(t_list *lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/16 21:14:29 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/20 21:41:14 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ int main (int ac, char **av)
 		head = head->next;
 	}
 	printf("-----------------------------------\n");
-	sort_four(&lst, &lst2, av, ac);
+	sort_five(&lst, &lst2);
+	//i = smallest(lst);
+	//printf("i : %d\n", i);
 	while(lst != NULL)
 	{
 		printf("%d\n", lst->content);

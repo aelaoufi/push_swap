@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:53:50 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/16 21:13:17 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/04/20 21:41:49 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void	sort_three(t_list **lst)
 		swap(*lst);
 }
 
-void	sort_four(t_list **lst, t_list **lst2, char **av, int ac)
+void	sort_four(t_list **lst, t_list **lst2)
 {
 	int	i;
 
-	i = comp_four(av, ac);
+	i = smallest(*lst);
 	if (i == 1)
 		push(lst, lst2);
 	if (i == 2)
@@ -59,5 +59,39 @@ void	sort_four(t_list **lst, t_list **lst2, char **av, int ac)
 		push(lst, lst2);
 	}
 	sort_three(lst);
+	push(lst2, lst);
+}
+
+void	sort_five(t_list **lst, t_list **lst2)
+{
+	int	i;
+
+	i = smallest(*lst);
+	if (i == 1)
+		push(lst, lst2);
+	if (i == 2)
+	{
+		swap(*lst);
+		push(lst, lst2);
+	}
+	if (i == 3)
+	{
+		reverse_rotate(lst);
+		reverse_rotate(lst);
+		reverse_rotate(lst);
+		push(lst, lst2);
+	}
+	if (i == 4)
+	{
+		reverse_rotate(lst);
+		reverse_rotate(lst);
+		push(lst, lst2);
+	}
+	if (i == 5)
+	{
+		reverse_rotate(lst);
+		push(lst, lst2);
+	}
+	sort_four(lst, lst2);
 	push(lst2, lst);
 }
