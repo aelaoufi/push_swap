@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:53:50 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/20 21:41:49 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:18:27 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@ void	sort_three(t_list **lst)
 	var = comp_three(*lst);
 	if (var == 1)
 	{
-		rotate(lst);
-		swap(*lst);
+		rotate(lst, 1);
+		swap(*lst, 1);
 	}
 	if (var == 2)
 	{
-		swap(*lst);
-		rotate(lst);
+		swap(*lst, 1);
+		rotate(lst, 1);
 	}
 	if (var == 3)
-		rotate(lst);
+		rotate(lst, 1);
 	if (var == 4)
-		reverse_rotate(lst);
+		reverse_rotate(lst, 1);
 	if (var == 5)
-		swap(*lst);
+		swap(*lst, 1);
 }
 
 void	sort_four(t_list **lst, t_list **lst2)
@@ -41,25 +41,25 @@ void	sort_four(t_list **lst, t_list **lst2)
 
 	i = smallest(*lst);
 	if (i == 1)
-		push(lst, lst2);
+		push(lst, lst2, 2);
 	if (i == 2)
 	{
-		swap(*lst);
-		push(lst, lst2);
+		swap(*lst, 1);
+		push(lst, lst2, 2);
 	}
 	if (i == 3)
 	{
-		reverse_rotate(lst);
-		reverse_rotate(lst);
-		push(lst, lst2);
+		reverse_rotate(lst, 1);
+		reverse_rotate(lst, 1);
+		push(lst, lst2, 2);
 	}
 	if (i == 4)
 	{
-		reverse_rotate(lst);
-		push(lst, lst2);
+		reverse_rotate(lst, 1);
+		push(lst, lst2, 2);
 	}
 	sort_three(lst);
-	push(lst2, lst);
+	push(lst2, lst, 1);
 }
 
 void	sort_five(t_list **lst, t_list **lst2)
@@ -68,30 +68,30 @@ void	sort_five(t_list **lst, t_list **lst2)
 
 	i = smallest(*lst);
 	if (i == 1)
-		push(lst, lst2);
+		push(lst, lst2, 2);
 	if (i == 2)
 	{
-		swap(*lst);
-		push(lst, lst2);
+		swap(*lst, 1);
+		push(lst, lst2, 2);
 	}
 	if (i == 3)
 	{
-		reverse_rotate(lst);
-		reverse_rotate(lst);
-		reverse_rotate(lst);
-		push(lst, lst2);
+		reverse_rotate(lst, 1);
+		reverse_rotate(lst, 1);
+		reverse_rotate(lst, 1);
+		push(lst, lst2, 2);
 	}
 	if (i == 4)
 	{
-		reverse_rotate(lst);
-		reverse_rotate(lst);
-		push(lst, lst2);
+		reverse_rotate(lst, 1);
+		reverse_rotate(lst, 1);
+		push(lst, lst2, 2);
 	}
 	if (i == 5)
 	{
-		reverse_rotate(lst);
-		push(lst, lst2);
+		reverse_rotate(lst, 1);
+		push(lst, lst2, 2);
 	}
 	sort_four(lst, lst2);
-	push(lst2, lst);
+	push(lst2, lst, 1);
 }

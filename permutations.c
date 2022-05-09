@@ -6,13 +6,13 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:31:45 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/16 21:18:15 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:16:22 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_list *stack)
+void	swap(t_list *stack, int i)
 {
 	int	temp;
 
@@ -21,9 +21,11 @@ void	swap(t_list *stack)
 	temp = stack->content;
 	stack->content = stack->next->content;
 	stack->next->content = temp;
+	ft_putstr("s");
+	print_action(i);
 }
 
-void	rotate(t_list **stack)
+void	rotate(t_list **stack, int i)
 {
 	t_list	*head;
 	int		temp;
@@ -38,10 +40,11 @@ void	rotate(t_list **stack)
 		head = head->next;
 	}
 	head->content = temp;
-	free(head);
+	ft_putstr("r");
+	print_action(i);
 }
 
-void	reverse_rotate(t_list **stack)
+void	reverse_rotate(t_list **stack, int i)
 {
 	t_list	*head;
 
@@ -54,9 +57,11 @@ void	reverse_rotate(t_list **stack)
 	}
 	ft_lstadd_front(stack, head->next);
 	head->next = 0;
+	ft_putstr("rr");
+	print_action(i);
 }
 
-void	push(t_list	**stack_1, t_list **stack_2)
+void	push(t_list	**stack_1, t_list **stack_2, int i)
 {
 	t_list	*head;
 
@@ -72,4 +77,6 @@ void	push(t_list	**stack_1, t_list **stack_2)
 	}
 	else
 		ft_lstadd_front(stack_2, head);
+	ft_putstr("p");
+	print_action(i);
 }

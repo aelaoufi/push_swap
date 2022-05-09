@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/20 21:36:52 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:14:06 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,26 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef	struct s_vars
+{
+	int	mid;
+	int	start;
+	int	end;
+	int	range;
+	int ac2;
+}				t_vars;
+
+
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_atoi(char *str);
-void	swap(t_list *stack);
-void	rotate(t_list **stack);
-void	reverse_rotate(t_list **stack);
-void	push(t_list	**stack_1, t_list **stack_2);
+void	swap(t_list *stack, int i);
+void	rotate(t_list **stack, int i);
+void	reverse_rotate(t_list **stack, int i);
+void	push(t_list	**stack_1, t_list **stack_2, int i);
 void	sort_three(t_list **lst);
 int		comp_three(t_list *lst);
 void	sort_four(t_list **lst, t_list **lst2);
@@ -40,5 +50,12 @@ int		small(char **av, int ac);
 void	sort_five(t_list **lst, t_list **lst2);
 int		small_sec(t_list *lst, int ac);
 int		smallest(t_list *lst);
+void	ft_putstr(char *str);
+void	creat_list(t_list *lst, int ac, char **av);
+void	creat_array(int *arr, int ac, char **av);
+void    array_sort(int  *arr, int ac);
+void	range(t_vars *var, int ac);
+void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr);
+void	print_action(int i);
 
 #endif

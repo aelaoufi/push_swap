@@ -6,11 +6,23 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:43:59 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/20 21:40:23 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:33:34 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
 
 int	ft_atoi(char *str)
 {
@@ -66,26 +78,26 @@ int	comp_three(t_list *lst)
 	return (0);
 }
 
-int	small(char **av, int ac)
-{
-	int	i;
-	int	j;
+// int	small(char **av, int ac)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 1;
-	j = 2;
-	while (i <= ac - 1)
-	{
-		if (i == ac - 1)
-			return (i);
-		while (j <= ac - 1 && ft_atoi(av[i]) < ft_atoi(av[j]))
-			j++;
-		if (j > ac - 1)
-			return (i);
-		i++;
-		j = i + 1;
-	}
-	return (0);
-}
+// 	i = 1;
+// 	j = 2;
+// 	while (i <= ac - 1)
+// 	{
+// 		if (i == ac - 1)
+// 			return (i);
+// 		while (j <= ac - 1 && ft_atoi(av[i]) < ft_atoi(av[j]))
+// 			j++;
+// 		if (j > ac - 1)
+// 			return (i);
+// 		i++;
+// 		j = i + 1;
+// 	}
+// 	return (0);
+// }
 
 int	smallest(t_list *lst)
 {
@@ -107,4 +119,16 @@ int	smallest(t_list *lst)
 		temp = head;
 	}
 	return (0);
+}
+
+void	creat_list(t_list *lst, int ac, char **av)
+{
+	int	i;
+
+	i = 1;
+    while (i < ac - 1)
+    {
+        ft_lstadd_back(&lst, ft_lstnew(ft_atoi(av[i + 1])));
+        i++;
+    }
 }

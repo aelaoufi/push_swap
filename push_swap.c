@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/04/20 21:41:14 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:25:30 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,44 @@ int main (int ac, char **av)
 	t_list  *lst;
     t_list  *head;
 	t_list	*lst2;
-	int	i;
+	t_vars	*var;
+	int		arr[ac - 1];
 	
-	i = 1;
+	var = malloc(sizeof(t_vars));
+	range(var, ac);
 	if (ac == 1)
 		return(0);
-    lst = ft_lstnew(ft_atoi(av[i]));
+    lst = ft_lstnew(ft_atoi(av[1]));
     head = lst;
-    while (i < ac - 1)
-    {
-        ft_lstadd_back(&lst, ft_lstnew(ft_atoi(av[i + 1])));
-        i++;
-    }
+	creat_list(lst, ac, av);
 	while(head != NULL)
 	{
-		printf("%d\n", head->content);
+		printf("l3mara dial bstila :%d\n", head->content);
 		head = head->next;
 	}
-	printf("-----------------------------------\n");
-	sort_five(&lst, &lst2);
+	ft_putstr("-----------------------------------\n");
+	//sort_five(&lst, &lst2);
 	//i = smallest(lst);
 	//printf("i : %d\n", i);
+	creat_array(arr, ac, av);
+	array_sort(arr, ac);
+	big_chunkus(&lst, &lst2, var, arr);
 	while(lst != NULL)
 	{
-		printf("%d\n", lst->content);
+		printf("lst :%d\n", lst->content);
 		lst = lst->next;
 	}
-	printf("-----------------------------------\n");
+	ft_putstr("-----------------------------------\n");
 	while(lst2 != NULL)
 	{
-		printf("%d\n", lst2->content);
+		printf("lst2 :%d\n", lst2->content);
 		lst2 = lst2->next;
 	}
+	// for (int j = 0; j < ac - 1; j++)
+	// 	printf("- %d\n", arr[j]);
+	ft_putstr("-----------------------------------\nsorted array\n");
+	// for (int j = 0; j < ac - 1; j++)
+	// 	printf("- %d\n", arr[j]);
 	//leaks are in permutations
 	return (0);
 }
