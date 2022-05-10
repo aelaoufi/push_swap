@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/09 18:14:06 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:54:49 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ typedef	struct s_vars
 	int	end;
 	int	range;
 	int ac2;
+	int temp_start;
+	int temp_end;
+	int i;
+
 }				t_vars;
 
 
@@ -57,5 +61,8 @@ void    array_sort(int  *arr, int ac);
 void	range(t_vars *var, int ac);
 void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 void	print_action(int i);
+void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr);
+void	big_b(t_list **lst2, t_vars *var, int *arr);
+void	b_to_a(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 
 #endif

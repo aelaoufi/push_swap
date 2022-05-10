@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:28:18 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/10 12:51:20 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:55:20 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	creat_array(int *arr, int ac, char **av)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 1;
 	j = 0;
@@ -27,7 +27,7 @@ void	creat_array(int *arr, int ac, char **av)
 	}
 }
 
-void	array_sort(int  *arr, int ac)
+void	array_sort(int *arr, int ac)
 {
 	int	i;
 	int	temp;
@@ -65,43 +65,44 @@ void	range(t_vars *var, int ac)
 	var->end = var->mid + var->range;
 }
 
+void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr)
+{
+	while (var->temp_start <= var->temp_end)
+	{
+		var->i = 0;
+		if ((*lst) && (*lst)->content == arr[var->temp_start])
+		{
+			push(lst, lst2, 2);
+			var->i++;
+		}
+		if ((*lst2) && (*lst2)->content == arr[var->temp_start]
+			&& var->temp_start < var->mid)
+			rotate(lst2, 2);
+		if (var->i != 0)
+			break ;
+		var->temp_start++;
+	}
+}
+
 void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 {
-	int temp_start;
-	int temp_end;
-	int temp_mid;
-	int i;
-
 	while ((*lst) && var->start >= 0)
 	{
 		while ((*lst) && var->end - var->start >= ft_lstsize(*lst2))
 		{
-			temp_start = var->start;
-			temp_end = var->end;
-			temp_mid = var->mid;
-			while (temp_start <= temp_end)
-			{
-				i = 0;
-				if ( (*lst) && (*lst)->content == arr[temp_start])
-				{
-					push(lst, lst2, 2);
-					i++;
-				}
-				if ((*lst2) && (*lst2)->content == arr[temp_mid] && temp_mid <= temp_end)
-					rotate(lst2, 2);
-				if (i != 0)
-					break ;
-				temp_start++;
-				temp_mid++;
-			}
-			if (i == 0)
+			var->temp_start = var->start;
+			var->temp_end = var->end;
+			a_to_b(lst, lst2, var, arr);
+			if (var->i == 0)
 				rotate(lst, 1);
 		}
 		var->start -= var->range;
 		var->end += var->range;
 	}
+	var->i = 0;
+	while (var->i < var->ac2 - 1)
+	{
+		b_to_a(lst, lst2, var, arr);
+		var->i++;
+	}
 }
-// if (var->start == var->end)
-// 		push(&lst, &lst2);
-// 	else
-// 	 	rotate(&lst);
