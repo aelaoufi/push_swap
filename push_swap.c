@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/09 17:25:30 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:36:45 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int main (int ac, char **av)
     lst = ft_lstnew(ft_atoi(av[1]));
     head = lst;
 	creat_list(lst, ac, av);
-	while(head != NULL)
-	{
-		printf("l3mara dial bstila :%d\n", head->content);
-		head = head->next;
-	}
-	ft_putstr("-----------------------------------\n");
+	// while(head != NULL)
+	// {
+	// 	printf("l3mara dial bstila :%d\n", head->content);
+	// 	head = head->next;
+	// }
+	//ft_putstr("-----------------------------------\n");
 	//sort_five(&lst, &lst2);
 	//i = smallest(lst);
 	//printf("i : %d\n", i);
@@ -58,3 +58,21 @@ int main (int ac, char **av)
 	//leaks are in permutations
 	return (0);
 }
+// lst2 :18
+// lst2 :15
+// lst2 :12
+// lst2 :11
+// lst2 :10
+// lst2 :8
+// lst2 :9
+// lst2 :6
+// lst2 :5
+// lst2 :4
+// lst2 :2
+// lst2 :1
+	//printf("ppspspspspspspsps");
+	//printf("arr : %d",arr[var->ac2 - var->k]);
+	//printf("i : %d\n", var->i);
+		//exit (1);
+		//printf("k : %d\n", var->k);
+		//printf("9bl lkhr : %d\n", arr[var->ac2 - 1]);

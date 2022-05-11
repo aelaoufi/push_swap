@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:31:45 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/09 18:16:22 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:00:49 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	swap(t_list *stack, int i)
 	temp = stack->content;
 	stack->content = stack->next->content;
 	stack->next->content = temp;
-	ft_putstr("s");
-	print_action(i);
+	// ft_putstr("s");
+	// print_action(i);
 }
 
 void	rotate(t_list **stack, int i)
@@ -40,8 +40,8 @@ void	rotate(t_list **stack, int i)
 		head = head->next;
 	}
 	head->content = temp;
-	ft_putstr("r");
-	print_action(i);
+	// ft_putstr("r");
+	// print_action(i);
 }
 
 void	reverse_rotate(t_list **stack, int i)
@@ -57,8 +57,8 @@ void	reverse_rotate(t_list **stack, int i)
 	}
 	ft_lstadd_front(stack, head->next);
 	head->next = 0;
-	ft_putstr("rr");
-	print_action(i);
+	// ft_putstr("rr");
+	// print_action(i);
 }
 
 void	push(t_list	**stack_1, t_list **stack_2, int i)
@@ -77,6 +77,25 @@ void	push(t_list	**stack_1, t_list **stack_2, int i)
 	}
 	else
 		ft_lstadd_front(stack_2, head);
-	ft_putstr("p");
-	print_action(i);
+	// ft_putstr("p");
+	// print_action(i);
 }
+
+// lst2 :4894
+// lst2 :999
+// lst2 :84
+// lst2 :615
+// lst2 :58
+// lst2 :65
+// lst2 :25
+// lst2 :22
+// lst2 :55
+// lst2 :13
+// lst2 :16
+// lst2 :8
+// lst2 :12
+// lst2 :5
+// lst2 :6
+// lst2 :4
+// lst2 :3
+// lst2 :2

@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/10 16:54:49 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:48:32 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef	struct s_vars
 	int temp_start;
 	int temp_end;
 	int i;
+	int j;
+	int k;
 
 }				t_vars;
 
@@ -64,5 +66,6 @@ void	print_action(int i);
 void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 void	big_b(t_list **lst2, t_vars *var, int *arr);
 void	b_to_a(t_list **lst, t_list **lst2, t_vars *var, int *arr);
+int		biggest(t_list *lst);
 
 #endif

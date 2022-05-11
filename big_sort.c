@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:28:18 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/10 16:55:20 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:00:02 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,10 @@ void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 		}
 		var->start -= var->range;
 		var->end += var->range;
+		if (var->start < 0)
+			var->start = 0;
+		if (var->end > var->ac2 - 1)
+			var->end = var->ac2 - 2;
 	}
-	var->i = 0;
-	while (var->i < var->ac2 - 1)
-	{
-		b_to_a(lst, lst2, var, arr);
-		var->i++;
-	}
+	b_to_a(lst, lst2, var, arr);
 }
