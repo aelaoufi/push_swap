@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/12 17:55:56 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/13 00:16:53 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef	struct s_vars
 	int	range;
 	int ac2;
 	int i;
+	int rb;
+	int ra;
 }				t_vars;
 
 
@@ -62,5 +64,6 @@ void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 void	big_b(t_list **lst2, t_vars *var, int *arr);
 void	b_to_a(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 int		biggest(t_list *lst);
+void	print_rotate(t_vars *var, t_list **lst, t_list **lst2);
 
 #endif

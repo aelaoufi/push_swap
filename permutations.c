@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:31:45 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/12 18:04:35 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/13 00:28:34 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	rotate(t_list **stack, int i)
 	head->content = temp;
 	ft_putstr("r");
 	print_action(i);
+
 }
 
 void	reverse_rotate(t_list **stack, int i)

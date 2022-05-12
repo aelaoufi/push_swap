@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:16:25 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/12 17:39:29 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/13 00:06:32 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	b_to_a(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 	while (*lst2)
 	{
 		var->i = biggest(*lst2);
-		if (var->i >= (var->ac2 - 1) / 2)
+		if (var->i >= (ft_lstsize(*lst2) / 2))
 		{
 			while (var->i < ft_lstsize(*lst2) + 1)
 			{

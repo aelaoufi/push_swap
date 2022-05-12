@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:28:18 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/12 18:05:07 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/13 00:28:17 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,6 @@ void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 			a_to_b(lst, lst2, var, arr);
 			if (var->i == 0)
 				rotate(lst, 1);
-			// printf("here\n");
-			printf("lst size: %d\n", ft_lstsize(*lst));
-			printf("lst2 size: %d\n", ft_lstsize(*lst2));
 		}
 		var->start -= var->range;
 		var->end += var->range;
