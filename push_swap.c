@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/11 13:36:45 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:05:54 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,20 @@ int main (int ac, char **av)
 	creat_array(arr, ac, av);
 	array_sort(arr, ac);
 	big_chunkus(&lst, &lst2, var, arr);
-	while(lst != NULL)
-	{
-		printf("lst :%d\n", lst->content);
-		lst = lst->next;
-	}
-	ft_putstr("-----------------------------------\n");
-	while(lst2 != NULL)
-	{
-		printf("lst2 :%d\n", lst2->content);
-		lst2 = lst2->next;
-	}
+	// while(lst != NULL)
+	// {
+	// 	printf("lst :%d\n", lst->content);
+	// 	lst = lst->next;
+	// }
+	// ft_putstr("-----------------------------------\n");
+	// while(lst2 != NULL)
+	// {
+	// 	printf("lst2 :%d\n", lst2->content);
+	// 	lst2 = lst2->next;
+	// }
 	// for (int j = 0; j < ac - 1; j++)
 	// 	printf("- %d\n", arr[j]);
-	ft_putstr("-----------------------------------\nsorted array\n");
+	//ft_putstr("-----------------------------------\nsorted array\n");
 	// for (int j = 0; j < ac - 1; j++)
 	// 	printf("- %d\n", arr[j]);
 	//leaks are in permutations

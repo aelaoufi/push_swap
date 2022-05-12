@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/11 13:48:32 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/12 17:55:56 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,7 @@ typedef	struct s_vars
 	int	end;
 	int	range;
 	int ac2;
-	int temp_start;
-	int temp_end;
 	int i;
-	int j;
-	int k;
-
 }				t_vars;
 
 

@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:28:18 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/11 14:00:02 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:05:07 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,41 +67,36 @@ void	range(t_vars *var, int ac)
 
 void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 {
-	while (var->temp_start <= var->temp_end)
-	{
 		var->i = 0;
-		if ((*lst) && (*lst)->content == arr[var->temp_start])
+		if ((*lst) && (*lst)->content >= arr[var->start]
+			&& (*lst)->content <= arr[var->end])
 		{
 			push(lst, lst2, 2);
 			var->i++;
 		}
-		if ((*lst2) && (*lst2)->content == arr[var->temp_start]
-			&& var->temp_start < var->mid)
+		if ((*lst2) && (*lst2)->content < var->mid)
 			rotate(lst2, 2);
-		if (var->i != 0)
-			break ;
-		var->temp_start++;
-	}
 }
 
 void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 {
-	while ((*lst) && var->start >= 0)
+	while ((*lst))
 	{
-		while ((*lst) && var->end - var->start >= ft_lstsize(*lst2))
+		while ((*lst) && var->end - var->start >= ft_lstsize(*lst2))	
 		{
-			var->temp_start = var->start;
-			var->temp_end = var->end;
 			a_to_b(lst, lst2, var, arr);
 			if (var->i == 0)
 				rotate(lst, 1);
+			// printf("here\n");
+			printf("lst size: %d\n", ft_lstsize(*lst));
+			printf("lst2 size: %d\n", ft_lstsize(*lst2));
 		}
 		var->start -= var->range;
 		var->end += var->range;
 		if (var->start < 0)
 			var->start = 0;
 		if (var->end > var->ac2 - 1)
-			var->end = var->ac2 - 2;
+			var->end = var->ac2 - 1;
 	}
 	b_to_a(lst, lst2, var, arr);
 }
