@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:28:18 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/13 00:28:17 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/13 16:59:15 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,22 +67,22 @@ void	range(t_vars *var, int ac)
 
 void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 {
-		var->i = 0;
-		if ((*lst) && (*lst)->content >= arr[var->start]
-			&& (*lst)->content <= arr[var->end])
-		{
-			push(lst, lst2, 2);
-			var->i++;
-		}
-		if ((*lst2) && (*lst2)->content < var->mid)
-			rotate(lst2, 2);
+	var->i = 0;
+	if ((*lst) && (*lst)->content >= arr[var->start]
+		&& (*lst)->content <= arr[var->end])
+	{
+		push(lst, lst2, 2);
+		var->i++;
+	}
+	if ((*lst2) && (*lst2)->content < var->mid)
+		rotate(lst2, 2);
 }
 
 void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 {
 	while ((*lst))
 	{
-		while ((*lst) && var->end - var->start >= ft_lstsize(*lst2))	
+		while ((*lst) && var->end - var->start >= ft_lstsize(*lst2))
 		{
 			a_to_b(lst, lst2, var, arr);
 			if (var->i == 0)

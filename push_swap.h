@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/13 00:16:53 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/13 16:56:33 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,17 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-typedef	struct s_vars
+typedef struct s_vars
 {
 	int	mid;
 	int	start;
 	int	end;
 	int	range;
-	int ac2;
-	int i;
-	int rb;
-	int ra;
+	int	ac2;
+	int	i;
+	int	rb;
+	int	ra;
 }				t_vars;
-
 
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
@@ -56,7 +55,7 @@ int		smallest(t_list *lst);
 void	ft_putstr(char *str);
 void	creat_list(t_list *lst, int ac, char **av);
 void	creat_array(int *arr, int ac, char **av);
-void    array_sort(int  *arr, int ac);
+void	array_sort(int *arr, int ac);
 void	range(t_vars *var, int ac);
 void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 void	print_action(int i);
