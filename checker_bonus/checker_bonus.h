@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:15:27 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/15 16:19:56 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/15 18:16:01 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef struct s_line
+{
+	int			reader;
+	char		*line;
+	char		*buf;
+	char		*temp;
+}				t_line;
+
 void	creat_list(t_list *lst, int ac, char **av);
 int     ft_atoi(char *str);
 void	ft_putstr(char *str);
@@ -37,5 +45,11 @@ void	swap(t_list *stack);
 void	rotate(t_list **stack);
 void	reverse_rotate(t_list **stack);
 void	push(t_list	**stack_1, t_list **stack_2);
+char	*get_next_line(int fd);
+size_t	ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(char *src);
+char	*ft_substr(char *s, unsigned int start, size_t len);
+char	*ft_strchr(char *str, int c);
 
 #endif
