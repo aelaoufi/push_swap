@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:43:59 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/13 17:01:33 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/15 15:49:45 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,27 +77,6 @@ int	comp_three(t_list *lst)
 		return (5);
 	return (0);
 }
-
-// int	small(char **av, int ac)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 1;
-// 	j = 2;
-// 	while (i <= ac - 1)
-// 	{
-// 		if (i == ac - 1)
-// 			return (i);
-// 		while (j <= ac - 1 && ft_atoi(av[i]) < ft_atoi(av[j]))
-// 			j++;
-// 		if (j > ac - 1)
-// 			return (i);
-// 		i++;
-// 		j = i + 1;
-// 	}
-// 	return (0);
-// }
 
 int	smallest(t_list *lst)
 {

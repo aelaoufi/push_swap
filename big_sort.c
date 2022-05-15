@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:28:18 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/13 16:59:15 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:02:40 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	range(t_vars *var, int ac)
 		var->range = (ac - 1) / 5;
 	var->start = var->mid - var->range;
 	var->end = var->mid + var->range;
+	var->temp = 0;
 }
 
 void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr)
