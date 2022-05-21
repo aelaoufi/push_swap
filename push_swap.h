@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 21:19:14 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 22:53:07 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void	print_rotate(t_vars *var, t_list **lst, t_list **lst2);
 void	down(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 void	ft_isdigit(char *str, long res, int sign);
 void	check_dupl(t_list *lst);
-void	is_sorted(t_list *lst, t_list *lst2, char *arr);
+void	is_sorted(t_list *lst, t_list *lst2);
 
 #endif

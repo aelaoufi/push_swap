@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 18:33:23 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 18:34:08 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 23:15:11 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_dupl(t_list *lst)
 			temp = temp->next;
 		if (temp->next != NULL && head->content == temp->next->content)
 		{
-			ft_putstr("error\n");
+			ft_putstr("Error\n");
 			exit(1);
 		}
 		head = head->next;
@@ -41,11 +41,16 @@ void	ft_isdigit(char *str, long res, int sign)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		ft_putstr("Error\n");
+		exit(1);
+	}
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
 		{
-			ft_putstr("error\n");
+			ft_putstr("Error\n");
 			exit(1);
 		}
 		i++;
@@ -54,7 +59,7 @@ void	ft_isdigit(char *str, long res, int sign)
 		res *= sign;
 	if (res > 2147483647 || res < -2147483648)
 	{
-		ft_putstr("error\n");
+		ft_putstr("Error\n");
 		exit(1);
 	}
 	return ;

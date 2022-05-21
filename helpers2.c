@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:08:53 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 21:23:52 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 23:42:20 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,16 @@ void	ft_isdigit(char *str, long res, int sign)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if (str[i] == '\0')
+	{
+		ft_putstr("Error\n");
+		exit(1);
+	}
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
 		{
-			ft_putstr("error\n");
+			ft_putstr("Error\n");
 			exit(1);
 		}
 		i++;
@@ -40,7 +45,7 @@ void	ft_isdigit(char *str, long res, int sign)
 		res *= sign;
 	if (res > 2147483647 || res < -2147483648)
 	{
-		ft_putstr("error\n");
+		ft_putstr("Error\n");
 		exit(1);
 	}
 	return ;
@@ -59,7 +64,7 @@ void	check_dupl(t_list *lst)
 			temp = temp->next;
 		if (temp->next != NULL && head->content == temp->next->content)
 		{
-			ft_putstr("error\n");
+			ft_putstr("Error\n");
 			exit(1);
 		}
 		head = head->next;
@@ -68,7 +73,7 @@ void	check_dupl(t_list *lst)
 	return ;
 }
 
-void	is_sorted(t_list *lst, t_list *lst2, char *arr)
+void	is_sorted(t_list *lst, t_list *lst2)
 {
 	t_list	*head;
 	int	i;
@@ -77,7 +82,7 @@ void	is_sorted(t_list *lst, t_list *lst2, char *arr)
 	i = 0;
 	if (ft_lstsize(lst2) != 0)
 	{
-		ft_putstr("KO\n");
+		ft_putstr("Error\n");
 		exit(0);
 	}		
 	while (head->next)
@@ -87,6 +92,6 @@ void	is_sorted(t_list *lst, t_list *lst2, char *arr)
 		head = head->next;
 	}
 	if (ft_lstsize(lst) == i + 1)
-		exit(0);
+		exit(1);
 	return ;
 }
