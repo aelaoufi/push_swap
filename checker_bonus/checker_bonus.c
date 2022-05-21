@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:20:03 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 18:41:34 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/22 00:19:33 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,10 +121,11 @@ int	main(int ac, char **av)
 	{
 		if (check_actions(str) == 0)
 		{
-			ft_putstr("error\n");
+			ft_putstr("Error\n");
 			exit(0);
 		}
 		do_actions(str, &lst, &lst2);
+		free(str);
 		str =  get_next_line(0);
 	}
 	if (is_sorted(lst, lst2) == 1)
