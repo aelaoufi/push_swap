@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:08:53 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 18:31:30 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:23:52 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,28 @@ void	check_dupl(t_list *lst)
 		head = head->next;
 		temp = head;
 	}
+	return ;
+}
+
+void	is_sorted(t_list *lst, t_list *lst2, char *arr)
+{
+	t_list	*head;
+	int	i;
+
+	head = lst;
+	i = 0;
+	if (ft_lstsize(lst2) != 0)
+	{
+		ft_putstr("KO\n");
+		exit(0);
+	}		
+	while (head->next)
+	{
+		if (head->content < head->next->content)
+				i++;
+		head = head->next;
+	}
+	if (ft_lstsize(lst) == i + 1)
+		exit(0);
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:53:50 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/20 15:34:39 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:17:35 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	sort_four(t_list **lst, t_list **lst2)
 	int	i;
 
 	i = smallest(*lst);
-	if (i == 1)
-		push(lst, lst2, 2);
+	// if (i == 1)
+	// 	push(lst, lst2, 2);
 	if (i == 2)
 	{
 		swap(*lst, 1);
@@ -64,8 +64,6 @@ void	sort_four(t_list **lst, t_list **lst2)
 
 void	sort_f(int i, t_list **lst, t_list **lst2)
 {
-	if (i == 1)
-		push(lst, lst2, 2);
 	if (i == 2)
 	{
 		swap(*lst, 1);

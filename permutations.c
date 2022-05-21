@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:31:45 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/20 19:06:16 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 21:19:24 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ void	push(t_list	**stack_1, t_list **stack_2, int i)
 {
 	t_list	*head;
 
-	if (!stack_1)
+	if (!*stack_1)
 		return ;
 	head = *stack_1;
 	*stack_1 = (*stack_1)->next;
-	if (!stack_2)
+	if (!*stack_2)
 	{
 		*stack_2 = head;
 		(*stack_2)->next = 0;
