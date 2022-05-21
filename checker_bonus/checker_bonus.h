@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:15:27 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/20 19:07:03 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:39:49 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ typedef struct s_line
 void	creat_list(t_list *lst, int ac, char **av);
 int		ft_atoi(char *str);
 void	ft_putstr(char *str);
-void	array_sort(int *arr, int ac);
-void	creat_array(int *arr, int ac, char **av);
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
@@ -54,5 +52,7 @@ char	*ft_strchr(char *str, int c);
 char	**ft_split(char const *s, char c);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *dst, size_t n);
+void	ft_isdigit(char *str, long res, int sign);
+void	check_dupl(t_list *lst);
 
 #endif

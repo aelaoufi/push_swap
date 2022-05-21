@@ -6,7 +6,8 @@ SRCS = push_swap.c helpers.c lists.c permutations.c sort.c big_sort.c helpers2.c
 
 BSRCS = checker_bonus/checker_bonus.c checker_bonus/helpers_bonus.c checker_bonus/lists_bonus.c\
 	checker_bonus/permutations_bonus.c checker_bonus/split.c\
-	checker_bonus/get_next_line.c checker_bonus/get_next_line_utils.c 
+	checker_bonus/get_next_line.c checker_bonus/get_next_line_utils.c\
+	checker_bonus/helpers2_bonus.c
 
 FLAGS = -Werror -Wextra -Wall
 
@@ -20,7 +21,7 @@ $(NAME) : $(OBJ)
 	cc -o $(NAME) $(FLAGS) $(OBJ)
 
 bonus : $(BOBJS)
-	cc -o $(BNAME) $(FLAGS) $(BOBJS) -fsanitize=address -g
+	cc -o $(BNAME) $(FLAGS) $(BOBJS)
 
 clean :
 	rm -rf $(OBJ) $(BOBJS)

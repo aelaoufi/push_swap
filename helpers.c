@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:43:59 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/16 15:25:54 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:14:46 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	ft_putstr(char *str)
 
 int	ft_atoi(char *str)
 {
-	int					i;
-	int					sign;
-	unsigned long long	res;
+	int		i;
+	int		sign;
+	long	res;
 
 	i = 0;
 	sign = 1;
@@ -37,19 +37,15 @@ int	ft_atoi(char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			sign = -1;
-		i++;
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
-	if (res > 9223372036854775807 && sign == 1)
-		return (-1);
-	if (res > (unsigned long long)9223372036854775807 + 1 && sign == -1)
-		return (0);
+	ft_isdigit(str, res, sign);
 	return (res * sign);
 }
 
@@ -110,4 +106,5 @@ void	creat_list(t_list *lst, int ac, char **av)
 		ft_lstadd_back(&lst, ft_lstnew(ft_atoi(av[i + 1])));
 		i++;
 	}
+	
 }

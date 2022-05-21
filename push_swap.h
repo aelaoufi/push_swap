@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/20 15:30:47 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:38:33 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,7 @@ void	push(t_list	**stack_1, t_list **stack_2, int i);
 void	sort_three(t_list **lst);
 int		comp_three(t_list *lst);
 void	sort_four(t_list **lst, t_list **lst2);
-int		small(char **av, int ac);
 void	sort_five(t_list **lst, t_list **lst2);
-int		small_sec(t_list *lst, int ac);
 int		smallest(t_list *lst);
 void	ft_putstr(char *str);
 void	creat_list(t_list *lst, int ac, char **av);
@@ -65,9 +63,10 @@ void	print_action(int i);
 void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 void	big_b(t_list **lst2, t_vars *var, int *arr);
 void	b_to_a(t_list **lst, t_list **lst2, t_vars *var, int *arr);
-int		biggest(t_list *lst, t_vars *var, int *arr);
+int		biggest(t_list *lst);
 void	print_rotate(t_vars *var, t_list **lst, t_list **lst2);
 void	down(t_list **lst, t_list **lst2, t_vars *var, int *arr);
-void	ft_isdigit(char *str);
+void	ft_isdigit(char *str, long res, int sign);
+void	check_dupl(t_list *lst);
 
 #endif

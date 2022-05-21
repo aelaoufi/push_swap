@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/20 15:24:56 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:29:47 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int ac, char **av)
 		return (0);
 	lst = ft_lstnew(ft_atoi(av[1]));
 	creat_list(lst, ac, av);
+	check_dupl(lst);
 	sorting_method(ac, lst, lst2);
 	if (ac - 1 > 5)
 	{

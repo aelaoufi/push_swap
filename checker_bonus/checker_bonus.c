@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:20:03 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 16:18:49 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:41:34 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,12 +126,6 @@ int	main(int ac, char **av)
 		}
 		do_actions(str, &lst, &lst2);
 		str =  get_next_line(0);
-	}
-	t_list *tmp = lst;
-	while (tmp)
-	{
-		printf("%d\n", tmp->content);
-		tmp = tmp->next;
 	}
 	if (is_sorted(lst, lst2) == 1)
 		ft_putstr("OK\n");

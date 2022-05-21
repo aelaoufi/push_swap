@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:14:55 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/20 15:36:10 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:35:28 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	ft_putstr(char *str)
 
 int	ft_atoi(char *str)
 {
-	int					i;
-	int					sign;
-	unsigned long long	res;
+	int		i;
+	int		sign;
+	long	res;
 
 	i = 0;
 	sign = 1;
@@ -37,19 +37,15 @@ int	ft_atoi(char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			sign = -1;
-		i++;
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
-	if (res > 9223372036854775807 && sign == 1)
-		return (-1);
-	if (res > (unsigned long long)9223372036854775807 + 1 && sign == -1)
-		return (0);
+	ft_isdigit(str, res, sign);
 	return (res * sign);
 }
 
@@ -65,41 +61,3 @@ void	creat_list(t_list *lst, int ac, char **av)
 	}
 }
 
-void	creat_array(int *arr, int ac, char **av)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (j < ac - 1)
-	{
-		arr[j] = ft_atoi(av[i]);
-		j++;
-		i++;
-	}
-}
-
-void	array_sort(int *arr, int ac)
-{
-	int	i;
-	int	temp;
-	int	j;
-
-	j = 1;
-	while (j <= ac - 1)
-	{
-		i = 0;
-		while (i < ac - 1)
-		{
-			if (arr[i] > arr[i + 1])
-			{
-				temp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = temp;
-			}
-			i++;
-		}
-		j++;
-	}
-}

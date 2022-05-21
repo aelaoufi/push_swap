@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helpers2.c                                         :+:      :+:    :+:   */
+/*   helpers2_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 18:08:53 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 18:31:30 by aelaoufi         ###   ########.fr       */
+/*   Created: 2022/05/21 18:33:23 by aelaoufi          #+#    #+#             */
+/*   Updated: 2022/05/21 18:34:08 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-void	print_action(int i)
+void	check_dupl(t_list *lst)
 {
-	if (i == 1)
-		ft_putstr("a\n");
-	if (i == 2)
-		ft_putstr("b\n");
+	t_list	*head;
+	t_list	*temp;
+
+	head = lst;
+	temp = head;
+	while (head != NULL)
+	{
+		while (temp->next != NULL && head->content != temp->next->content)
+			temp = temp->next;
+		if (temp->next != NULL && head->content == temp->next->content)
+		{
+			ft_putstr("error\n");
+			exit(1);
+		}
+		head = head->next;
+		temp = head;
+	}
+	return ;
 }
 
 void	ft_isdigit(char *str, long res, int sign)
@@ -42,28 +56,6 @@ void	ft_isdigit(char *str, long res, int sign)
 	{
 		ft_putstr("error\n");
 		exit(1);
-	}
-	return ;
-}
-
-void	check_dupl(t_list *lst)
-{
-	t_list	*head;
-	t_list	*temp;
-
-	head = lst;
-	temp = head;
-	while (head != NULL)
-	{
-		while (temp->next != NULL && head->content != temp->next->content)
-			temp = temp->next;
-		if (temp->next != NULL && head->content == temp->next->content)
-		{
-			ft_putstr("error\n");
-			exit(1);
-		}
-		head = head->next;
-		temp = head;
 	}
 	return ;
 }

@@ -6,13 +6,13 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:16:25 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/20 15:14:56 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 18:28:05 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	biggest(t_list *lst, t_vars *var, int *arr)
+int	biggest(t_list *lst)
 {
 	t_list	*head;
 	t_list	*temp;
@@ -34,7 +34,7 @@ int	biggest(t_list *lst, t_vars *var, int *arr)
 	return (0);
 }
 
-int	biggest_content(t_list *lst, t_vars *var, int *arr)
+int	biggest_content(t_list *lst)
 {
 	t_list	*head;
 	t_list	*temp;
@@ -74,8 +74,8 @@ void	b_to_a(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 {
 	while (*lst2)
 	{
-		var->i = biggest(*lst2, var, arr);
-		var->content = biggest_content((*lst2), var, arr);
+		var->i = biggest(*lst2);
+		var->content = biggest_content((*lst2));
 		if (arr[var->ac2 - 2] != var->content)
 		{
 			reverse_rotate(lst, 1);
