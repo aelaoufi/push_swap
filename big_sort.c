@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:28:18 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/14 19:02:40 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/20 15:14:00 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,12 @@ void	array_sort(int *arr, int ac)
 	int	temp;
 	int	j;
 
-	j = 1;
-	while (j <= ac - 1)
+	j = 0;
+	temp = 0;
+	while (j < ac - 1)
 	{
 		i = 0;
-		while (i < ac - 1)
+		while (i < ac - 2)
 		{
 			if (arr[i] > arr[i + 1])
 			{
@@ -75,7 +76,7 @@ void	a_to_b(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 		push(lst, lst2, 2);
 		var->i++;
 	}
-	if ((*lst2) && (*lst2)->content < var->mid)
+	if ((*lst2) && (*lst2)->content < arr[var->mid])
 		rotate(lst2, 2);
 }
 
@@ -93,8 +94,8 @@ void	big_chunkus(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 		var->end += var->range;
 		if (var->start < 0)
 			var->start = 0;
-		if (var->end > var->ac2 - 1)
-			var->end = var->ac2 - 1;
+		if (var->end >= var->ac2 - 2)
+			var->end = var->ac2 - 2;
 	}
 	b_to_a(lst, lst2, var, arr);
 }

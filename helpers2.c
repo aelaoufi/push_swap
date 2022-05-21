@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:08:53 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/13 17:02:30 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/20 15:16:14 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,21 @@ void	print_rotate(t_vars *var, t_list **lst, t_list **lst2)
 		ft_putstr("ra\n");
 		rotate(lst, 0);
 	}
+}
+
+void	ft_isdigit(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
+		{
+			ft_putstr("error");
+			exit(1);
+		}
+		i++;
+	}
+	return ;
 }

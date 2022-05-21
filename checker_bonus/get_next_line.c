@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 17:18:51 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/15 18:14:35 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/21 16:08:16 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*get_next_line(int fd)
 	ft_assign2(&str, &line);
 	while (line.reader > 0 && !ft_checknline(str))
 	{
-		line.reader = read(fd, line.buf, 0);
+		line.reader = read(fd, line.buf, 1);
 		if (line.reader < 0)
 		{
 			if (str)

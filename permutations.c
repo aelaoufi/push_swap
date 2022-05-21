@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:31:45 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/13 23:32:15 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:06:16 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	reverse_rotate(t_list **stack, int i)
 {
 	t_list	*head;
 
-	if (!stack || ft_lstsize(*stack) == 1)
+	if (!*stack || ft_lstsize(*stack) == 1)
 		return ;
 	head = (*stack);
 	while (head->next->next != NULL)
@@ -82,22 +82,3 @@ void	push(t_list	**stack_1, t_list **stack_2, int i)
 	ft_putstr("p");
 	print_action(i);
 }
-
-// lst2 :4894
-// lst2 :999
-// lst2 :84
-// lst2 :615
-// lst2 :58
-// lst2 :65
-// lst2 :25
-// lst2 :22
-// lst2 :55
-// lst2 :13
-// lst2 :16
-// lst2 :8
-// lst2 :12
-// lst2 :5
-// lst2 :6
-// lst2 :4
-// lst2 :3
-// lst2 :2

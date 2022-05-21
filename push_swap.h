@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:33 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/14 17:47:31 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/20 15:30:47 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_vars
 	int	rb;
 	int	ra;
 	int	temp;
+	int	content;
+	int	content2;
 }				t_vars;
 
 t_list	*ft_lstnew(int content);
@@ -66,5 +68,6 @@ void	b_to_a(t_list **lst, t_list **lst2, t_vars *var, int *arr);
 int		biggest(t_list *lst, t_vars *var, int *arr);
 void	print_rotate(t_vars *var, t_list **lst, t_list **lst2);
 void	down(t_list **lst, t_list **lst2, t_vars *var, int *arr);
+void	ft_isdigit(char *str);
 
 #endif

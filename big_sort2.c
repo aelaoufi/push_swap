@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:16:25 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/14 19:01:53 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/20 15:14:56 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	biggest(t_list *lst, t_vars *var, int *arr)
 	head = lst;
 	temp = head;
 	i = 1;
-	// if (arr[var->ac2 - 1] != lst->content)
-	// 	return (0);
 	while (head != NULL)
 	{
 		while (temp->next != NULL && head->content > temp->next->content)
@@ -44,16 +42,12 @@ int	biggest_content(t_list *lst, t_vars *var, int *arr)
 
 	head = lst;
 	temp = head;
-	i = 1;
-	// if (arr[var->ac2 - 1] != lst->content)
-	// 	return (0);
 	while (head != NULL)
 	{
 		while (temp->next != NULL && head->content > temp->next->content)
 			temp = temp->next;
 		if (temp->next == NULL)
 			return (head->content);
-		i++;
 		head = head->next;
 		temp = head;
 	}
@@ -81,36 +75,26 @@ void	b_to_a(t_list **lst, t_list **lst2, t_vars *var, int *arr)
 	while (*lst2)
 	{
 		var->i = biggest(*lst2, var, arr);
-		
-		if (var->i >= (ft_lstsize(*lst2) / 2))
+		var->content = biggest_content((*lst2), var, arr);
+		if (arr[var->ac2 - 2] != var->content)
 		{
-			while (var->i < ft_lstsize(*lst2) + 1)
-			{
+			reverse_rotate(lst, 1);
+			var->temp--;
+			var->ac2--;
+		}
+		else if (var->i >= (ft_lstsize(*lst2) / 2) && var->ac2 - 2 >= 0)
+		{
+			while ((*lst2)->content != arr[var->ac2 - 2])
 				reverse_rotate(lst2, 2);
-				var->i++;
-			}
 			push(lst2, lst, 1);
+			var->ac2--;
 		}
 		else
 		{
-			while (var->i > 1)
-			{
-				rotate(lst2, 2);
-				var->i--;
-			}
+			while ((*lst2)->content != arr[var->ac2 - 2] && var->ac2 - 2 >= 0)
+				down(lst, lst2, var, arr);
 			push(lst2, lst, 1);
-			// while (var->i > 1)
-			// 	down(lst, lst2, var, arr);
-			// //push(lst2, lst, 1);
-			// if (arr[var->ac2 - 1] != biggest_content(*lst2, var, arr))
-			// {
-			// 	while (var->temp != 0)
-			// 	{
-			// 		reverse_rotate(lst, 1);
-			// 		var->temp--;
-			// 	}
-			// 	var->ac2--;
-			// }
+			var->ac2--;
 		}
 	}
 }
