@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:15:27 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 18:39:49 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/22 10:38:02 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *dst, size_t n);
 void	ft_isdigit(char *str, long res, int sign);
 void	check_dupl(t_list *lst);
+void	print_error(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif

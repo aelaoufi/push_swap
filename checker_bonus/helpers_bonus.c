@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:14:55 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 18:35:28 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/22 10:36:23 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,3 @@ void	creat_list(t_list *lst, int ac, char **av)
 		i++;
 	}
 }
-

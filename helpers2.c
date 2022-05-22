@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:08:53 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 23:42:20 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/22 10:48:45 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ void	print_action(int i)
 		ft_putstr("b\n");
 }
 
+void	print_error(char *str)
+{
+	ft_putstr(str);
+	exit(1);
+}
+
 void	ft_isdigit(char *str, long res, int sign)
 {
 	int	i;
@@ -28,26 +34,17 @@ void	ft_isdigit(char *str, long res, int sign)
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	if (str[i] == '\0')
-	{
-		ft_putstr("Error\n");
-		exit(1);
-	}
+		print_error("Error\n");
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
-		{
-			ft_putstr("Error\n");
-			exit(1);
-		}
+			print_error("Error\n");
 		i++;
 	}
 	if (sign == -1)
 		res *= sign;
 	if (res > 2147483647 || res < -2147483648)
-	{
-		ft_putstr("Error\n");
-		exit(1);
-	}
+		print_error("Error\n");
 	return ;
 }
 
@@ -76,7 +73,7 @@ void	check_dupl(t_list *lst)
 void	is_sorted(t_list *lst, t_list *lst2)
 {
 	t_list	*head;
-	int	i;
+	int		i;
 
 	head = lst;
 	i = 0;

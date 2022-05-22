@@ -6,7 +6,7 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:11:35 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/22 00:18:04 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/22 10:50:09 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ int	main(int ac, char **av)
 	t_list	*lst;
 	t_list	*lst2;
 	t_vars	*var;
-	int		arr[ac - 1];
+	int		*arr;
 
 	var = malloc(sizeof(t_vars));
+	arr = malloc(sizeof(int) * (ac - 2));
 	range(var, ac);
 	if (ac == 1)
 		return (0);
@@ -46,6 +47,5 @@ int	main(int ac, char **av)
 		array_sort(arr, ac);
 		big_chunkus(&lst, &lst2, var, arr);
 	}
-
 	return (0);
 }

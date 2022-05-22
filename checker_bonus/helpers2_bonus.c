@@ -6,11 +6,31 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 18:33:23 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/21 23:15:11 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/22 10:43:05 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+
+void	print_error(char *str)
+{
+	ft_putstr(str);
+	exit(1);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{	
+	if (s1 == NULL)
+		return (0);
+	while ((*s1 != '\0') || (*s2 != '\0'))
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (0);
+}
 
 void	check_dupl(t_list *lst)
 {
@@ -42,25 +62,16 @@ void	ft_isdigit(char *str, long res, int sign)
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-	{
-		ft_putstr("Error\n");
-		exit(1);
-	}
+		print_error("Error\n");
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
-		{
-			ft_putstr("Error\n");
-			exit(1);
-		}
+			print_error("Error\n");
 		i++;
 	}
 	if (sign == -1)
 		res *= sign;
 	if (res > 2147483647 || res < -2147483648)
-	{
-		ft_putstr("Error\n");
-		exit(1);
-	}
+		print_error("Error\n");
 	return ;
 }

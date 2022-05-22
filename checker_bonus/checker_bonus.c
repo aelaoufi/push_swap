@@ -6,54 +6,40 @@
 /*   By: aelaoufi <aelaoufi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:20:03 by aelaoufi          #+#    #+#             */
-/*   Updated: 2022/05/22 00:19:33 by aelaoufi         ###   ########.fr       */
+/*   Updated: 2022/05/22 10:53:39 by aelaoufi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	ft_strcmp(char *s1, char *s2)
-{	
-	if (s1 == NULL)
-		return 0;
-	while ((*s1 != '\0') || (*s2 != '\0'))
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (0);
-}
-
-int	check_actions(char *str)
+int	check_actions(char *str, t_list *lst2)
 {
 	if (ft_strcmp(str, "sa\n") == 0)
-		return(1);
+		return (1);
 	else if (ft_strcmp(str, "sb\n") == 0)
-		return(1);
+		return (1);
 	else if (ft_strcmp(str, "ra\n") == 0)
-		return(1);
+		return (1);
 	else if (ft_strcmp(str, "rb\n") == 0)
-		return(1);
+		return (1);
 	else if (ft_strcmp(str, "pb\n") == 0)
-		return(1);
-	else if (ft_strcmp(str, "pa\n") == 0)
-		return(1);
+		return (1);
+	else if (ft_strcmp(str, "pa\n") == 0 && lst2)
+		return (1);
 	else if (ft_strcmp(str, "rra\n") == 0)
-		return(1);
+		return (1);
 	else if (ft_strcmp(str, "rrb\n") == 0)
-		return(1);
+		return (1);
 	else if (ft_strcmp(str, "ss\n") == 0)
-		return(1);
+		return (1);
 	else if (ft_strcmp(str, "rr\n") == 0)
-		return(1);	
+		return (1);
 	else if (ft_strcmp(str, "rrr\n") == 0)
-		return(1);
+		return (1);
 	return (0);
 }
 
-void	do_actions(char *str, t_list **lst, t_list **lst2)
+void	do_act(char *str, t_list **lst, t_list **lst2)
 {
 	if (ft_strcmp(str, "sa\n") == 0)
 		swap(*lst, 0);
@@ -71,6 +57,11 @@ void	do_actions(char *str, t_list **lst, t_list **lst2)
 		reverse_rotate(lst, 0);
 	if (ft_strcmp(str, "rrb\n") == 0)
 		reverse_rotate(lst2, 0);
+}
+
+void	do_actions(char *str, t_list **lst, t_list **lst2)
+{
+	do_act(str, lst, lst2);
 	if (ft_strcmp(str, "ss\n") == 0)
 	{
 		swap(*lst, 0);
@@ -113,20 +104,19 @@ int	main(int ac, char **av)
 	t_list	*lst;
 	t_list	*lst2;
 
+	if (ac == 1)
+		return (0);
 	lst = ft_lstnew(ft_atoi(av[1]));
 	creat_list(lst, ac, av);
-	int i = 0;
-	str =  get_next_line(0);
+	check_dupl(lst);
+	str = get_next_line(0);
 	while (str)
 	{
-		if (check_actions(str) == 0)
-		{
-			ft_putstr("Error\n");
-			exit(0);
-		}
+		if (check_actions(str, lst2) == 0)
+			print_error("Error\n");
 		do_actions(str, &lst, &lst2);
 		free(str);
-		str =  get_next_line(0);
+		str = get_next_line(0);
 	}
 	if (is_sorted(lst, lst2) == 1)
 		ft_putstr("OK\n");
