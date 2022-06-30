@@ -24,9 +24,9 @@ bonus : $(BOBJS)
 	cc -o $(BNAME) $(FLAGS) $(BOBJS)
 
 clean :
-	rm -rf $(OBJ) $(BOBJS)
+	git rm -rf $(OBJ) $(BOBJS)
 
 fclean : clean
-	rm -rf $(NAME) $(BNAME) $(OBJ) $(BOBJS)
+	git rm -rf $(NAME) $(BNAME) $(OBJ) $(BOBJS)
 
 re: fclean all
